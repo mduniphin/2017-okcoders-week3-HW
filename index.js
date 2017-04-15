@@ -13,8 +13,10 @@ mc.connect(url, function(err, db){
 		console.log("Number of emails in collection: " + count);
 		db.close();
 	});
-	// emails.find({date:"2000-11-13 10:06:00-08:00"}).toArray(function(err,docs){
-	// 	console.log(docs);
-	// 	db.close();
-	// });
+	// emails.find({})
+	emails.find({}).sort([['date', 1]]).limit(1).toArray(function(err,docs){
+		console.log("\n \nHere is the earliest dated email in the collection: \n");
+		console.log(docs)
+		db.close();
+	});
 });
