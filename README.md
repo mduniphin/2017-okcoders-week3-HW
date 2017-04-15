@@ -4,9 +4,11 @@
 enron.json
 
 
-1. how many emails are there? - done
+1. how many emails are there? 
+-done
 
-2. what is the earliest email (in terms of date)
+2. what is the earliest email (in terms of date) 
+-done
 
 3. what is the latest email?
 
