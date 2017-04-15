@@ -1,0 +1,27 @@
+{
+  "name": "week3hw",
+  "version": "0.0.1",
+  "description": "mongoDB homework",
+  "main": "index.js",
+  "dependencies": {
+    "mongodb": "^2.2.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mduniphin/2017-okcoders-week3-HW.git"
+  },
+  "keywords": [
+    "okcoders",
+    "week-3"
+  ],
+  "author": "Maxx Duniphin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mduniphin/2017-okcoders-week3-HW/issues"
+  },
+  "homepage": "https://github.com/mduniphin/2017-okcoders-week3-HW#readme"
+}
