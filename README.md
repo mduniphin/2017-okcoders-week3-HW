@@ -14,5 +14,6 @@ enron.json
 -done
 
 4. do any emails contain the word "money" in their text?
+-done
 
 5. what sender sent the most emails? (edited)
