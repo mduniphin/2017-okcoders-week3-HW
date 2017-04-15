@@ -17,7 +17,7 @@ mc.connect(url, function(err, db){
 		if (err) {
         console.log('Error:', err);
      	};
-		console.log("Number of emails in collection: " + count);
+		console.log("\nNumber of emails in collection: " + count);
 		db.close();
 	});
 
@@ -31,7 +31,7 @@ mc.connect(url, function(err, db){
 		db.close();
 	});
 
-	//prints latest dateed email in enron collection
+	//prints latest dated email in enron collection
 	emails.find({}).sort([['date', -1]]).limit(1).toArray(function(err,late){
 		if (err) {
         console.log('Error:', err);
@@ -41,14 +41,25 @@ mc.connect(url, function(err, db){
 		db.close();
 	});
 
-	//prints total number of emails containing 'money' in text
+	//prints total number of emails in enron collection containing 'money' in text
 	emails.find({text:/money/}).count(function(err, money) {
 		if (err) {
-        console.log('Error:', err);
+        	console.log('Error:', err);
      	};
 		console.log("\n \nNumber of emails that contain the word 'money' in their text: \n");
 		console.log(money)
 	});
 
-	
+	//prints highest occurring "sender" email address in enron collection and prints count of occurrances
+	emails.aggregate([
+		{$group:{"_id":"$sender","Emails sent":{$sum:1}}},
+		{$sort:{"Emails sent":-1}},
+		{$limit:1}
+		], function(err, agg) {
+			if (err) {
+				console.log('Error:', err);
+			};
+			console.log("\n \nEmail address that sent the most emails in the collection: \n");
+			console.log(agg);
+	});
 });
