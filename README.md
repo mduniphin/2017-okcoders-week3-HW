@@ -11,6 +11,7 @@ enron.json
 -done
 
 3. what is the latest email?
+-done
 
 4. do any emails contain the word "money" in their text?
 
